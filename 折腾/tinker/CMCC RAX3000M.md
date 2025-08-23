@@ -38,11 +38,13 @@ hanwckf 出品的 uboot [hanwckf/bl-mt798x](https://github.com/hanwckf/bl-mt798x
 
 关于 `BL2` 分区：在我的这台 CMCC RAX3000M 流程便是刷入 uboot 后刷入 `BL2` 分区，之后再次刷入 recovery 固件，但是在中国移动的官方固件底下 `BL2` 分区是被锁定的。所以没有进行刷写，直接使用 TFTP 工具进行刷写 recovery 固件，相当于直接跳过了 `BL2` 分区的刷写，使用并未发现任何错误。  
 
-> 之后成功刷写 ImmortalWrt 之后可以使用内核模块 `kmod-mtd-rw` 进行解锁之后刷写 `BL2` 分区 (~~困扰了老半天~~)(挠头)  
-> **官方固件都使用支持 TFTP 协议的刷写工具进行刷入** (例如 tftpd 等)  
+> 之后成功刷写 ImmortalWrt 之后可以使用内核模块 `kmod-mtd-rw` 进行解锁之后刷写 `BL2` 分区 (~~困扰了老半天~~)(挠头)
+> 
 > 跳过 `BL2` 写入有潜在风险，务必确认自己设备与版本适配后再决定。
-> 具体参考github的[PR Description](https://github.com/immortalwrt/immortalwrt/pull/1075))
-> 一切以代码提交者提供的信息为主
+> 
+> 具体参考github的[PR Description](https://github.com/immortalwrt/immortalwrt/pull/1075)
+> 
+> 一切以代码提交者提供的信息为主  
 
 ### hanwckf 的二改 ImmortalWrt
 1. 解锁 ssh  
@@ -67,4 +69,4 @@ AdGuard Home的上游服务器只有127.0.0.1:7874这一项
 ## 欢迎留言哦~
 对此博文有任何问题欢迎交流哦~  
 
-> **本教程所有内容仅供学习和参考，作者已尽力确保其准确性。因跟随本教程操作而导致的任何数据丢失、设备损坏或其他直接或间接损失，作者概不负责。请在操作前务必做好数据备份，并自行承担所有风险。**
+> **本文章所有内容仅供学习和参考，作者已尽力确保其准确性。因跟随本文章操作而导致的任何数据丢失、设备损坏或其他直接或间接损失，作者概不负责。请在操作前务必做好数据备份，并自行承担所有风险。**
