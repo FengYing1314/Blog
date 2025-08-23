@@ -41,7 +41,7 @@ hanwckf 出品的 uboot [hanwckf/bl-mt798x](https://github.com/hanwckf/bl-mt798x
 > 之后成功刷写 ImmortalWrt 之后可以使用内核模块 `kmod-mtd-rw` 进行解锁之后刷写 `BL2` 分区 (~~困扰了老半天~~)(挠头)  
 > **官方固件都使用支持 TFTP 协议的刷写工具进行刷入** (例如 tftpd 等)  
 > 跳过 `BL2` 写入有潜在风险，务必确认自己设备与版本适配后再决定。
-> 具体参考github的[PR Description]([mediatek: add CMCC RAX3000M support by 1715173329 · 拉取请求 #1075 · immortalwrt/immortalwrt](https://github.com/immortalwrt/immortalwrt/pull/1075))
+> 具体参考github的[PR Description](https://github.com/immortalwrt/immortalwrt/pull/1075))
 > 一切以代码提交者提供的信息为主
 
 ### hanwckf 的二改 ImmortalWrt
