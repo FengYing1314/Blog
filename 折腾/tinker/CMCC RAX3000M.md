@@ -5,7 +5,8 @@
 ## 简要介绍
 CMCC RAX3000M分为普通版和算力版区别是普通版为128M闪存 (NAND)，算力版则具有64G eMMC空间
 本篇的流程仅适用于CMCC RAX3000M NAND型号。
-这里仅提供作者觉得可以帮到的资料，主要细节流程也有很多帖子了，这里的流程并不全。如果你完全是小白，并且未看过其余帖子，可能这个帖子对你并无帮助，还有可能对你造成混乱。请你**酌情阅读本文章**
+这里仅提供作者觉得可以帮到的资料，主要细节流程也有很多帖子了，这里的流程并不全。  
+如果你完全是小白，并且未看过其余帖子，可能这个帖子对你并无帮助，还有可能对你造成混乱。请你**酌情阅读本文章**
 
 ## 相关资源
 
@@ -26,12 +27,11 @@ hanwckf 出品的 uboot [hanwckf/bl-mt798x](https://github.com/hanwckf/bl-mt798x
 - 支持 TFTP 的服务端 (如 tftpd 等)
 
 ## 刷机流程
-
 ### 刷入 ImmortalWrt 官方固件
 1. 解锁 ssh  
 2. 通过 ssh 连接到路由器  
 3. 刷入 uboot  
-4. 刷入 `cmcc_rax3000m-initramfs-recovery.itb` (集成最小文件系统的 Linux 内核，适用于首次安装或故障恢复)  
+4. 使用tftpd刷入 `immortalwrt-mediatek-filogic-cmcc_rax3000m-initramfs-recovery.itb` (集成最小文件系统的 Linux 内核，适用于首次安装或故障恢复,如果固件为其余名称请修改为上述名称)  
 5. 浏览器打开 `http://192.168.1.1`  
 6. 系统 - 备份与升级 - 刷写新的固件，选择官方 `cmcc_rax3000m-squashfs-sysupgrade.itb`  
 7. 完成 (?)  
@@ -41,6 +41,8 @@ hanwckf 出品的 uboot [hanwckf/bl-mt798x](https://github.com/hanwckf/bl-mt798x
 > 之后成功刷写 ImmortalWrt 之后可以使用内核模块 `kmod-mtd-rw` 进行解锁之后刷写 `BL2` 分区 (~~困扰了老半天~~)(挠头)  
 > **官方固件都使用支持 TFTP 协议的刷写工具进行刷入** (例如 tftpd 等)  
 > 跳过 `BL2` 写入有潜在风险，务必确认自己设备与版本适配后再决定。
+> 具体参考github的[PR Description]([mediatek: add CMCC RAX3000M support by 1715173329 · 拉取请求 #1075 · immortalwrt/immortalwrt](https://github.com/immortalwrt/immortalwrt/pull/1075))
+> 一切以代码提交者提供的信息为主
 
 ### hanwckf 的二改 ImmortalWrt
 1. 解锁 ssh  
@@ -49,4 +51,20 @@ hanwckf 出品的 uboot [hanwckf/bl-mt798x](https://github.com/hanwckf/bl-mt798x
 4. 浏览器进入 `http://192.168.1.1`  
 5. 选择后缀名为 `bin` 类型或者其余兼容的固件进行刷写  
 6. 等待上传完成和校验完成，Web 上会有等待重启的界面  
-7. 完成
+7. 完成  
+
+## 网络相关设置
+hanwckf的二改的包含了大量的网络驱动优化，所以更趋向于开箱即用(?  
+如果选择的是ImmortalWrt官方固件请自己根据自己的网络环境进行定制  
+### 我的网络配置
+使用了AdGuard Home和OpenClash  
+AdGuard Home接管了Dnsmasq的53端口  
+AdGuard Home的上游服务器只有127.0.0.1:7874这一项  
+所以我的网络环境为
+```
+客户端设备 --> ImmortalWrt 路由器 --> AdGuard Home DNS处理 --> OpenClash DNS解析 --> OpenClash 流量分流 --> (根据规则) --> 直连访问 / 代理访问
+```
+## 欢迎留言哦~
+对此博文有任何问题欢迎交流哦~  
+
+> **本教程所有内容仅供学习和参考，作者已尽力确保其准确性。因跟随本教程操作而导致的任何数据丢失、设备损坏或其他直接或间接损失，作者概不负责。请在操作前务必做好数据备份，并自行承担所有风险。**
