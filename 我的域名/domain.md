@@ -3,10 +3,10 @@
 接下来简单介绍一下叭  
 ## 域名
 以下是我目前拥有的域名列表  
-- fengying.xin (2025-8注册，目前正在进行备案)  
+- fengying.xin (2025-8注册，进行了ICP备案)  
 - fengying.shop (2025-8注册)  
 - miao520.xyz(2025-02注册)  
-- miao520.fun(2024-08注册,即将过期)  
+- miao520.fun(2024-08注册,**已过期**)  
 ## 站点
 以下是我目前建立的站点  
 - www.fengying.xin (本站站点)  
@@ -17,4 +17,3 @@
 以下是我使用的邮箱，你可以通过任意一个邮箱进行联系我
 - admin@fengying.shop(优先使用)
 - fymiao@163.com(优先使用)
-- fengying@miao520.fun(即将废弃)
