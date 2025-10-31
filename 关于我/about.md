@@ -85,9 +85,9 @@
 
 - [**爱发电**](https://afdian.com/a/fengyingqwq)
 - **微信支付**  
-  ![微信支付](https://admin.fengying.xin/api/v2/objects/file/9y8m7zabj7696tmmzg.png)
+  ![微信支付](https://image.fengying.xin/Image%20hosting/WeChat%20appreciation%20QR%20code.png)
 - **支付宝**  
-  ![支付宝](https://admin.fengying.xin/api/v2/objects/file/yab3e1jtu5htanoqs6.jpg)
+  ![支付宝](https://image.fengying.xin/Image%20hosting/Alipay%20payment%20QR%20code.jpg)
 
 ### 其他方式
 

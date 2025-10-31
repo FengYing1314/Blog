@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"e13befd0330f7900","x":-260,"y":220,"width":400,"height":280,"type":"file","file":"Blog/关于我/about.md"},
+		{"id":"9316b038cf6432eb","x":167,"y":220,"width":400,"height":280,"type":"file","file":"Blog/我的域名/domain.md"},
+		{"id":"2195d13d40a118e3","x":140,"y":42,"width":250,"height":60,"type":"text","text":"Page"},
+		{"id":"5aa95c84edaa223a","x":980,"y":42,"width":250,"height":60,"type":"text","text":"Blog post"},
+		{"id":"f397bbf7e36f3928","x":905,"y":220,"width":400,"height":280,"type":"file","file":"Blog/折腾/tinker/CMCC RAX3000M.md"},
+		{"id":"4d702cec96e7220a","x":-260,"y":600,"width":400,"height":280,"type":"file","file":"Blog/留言/message.md"},
+		{"id":"96a25297ea40ddfd","x":167,"y":600,"width":400,"height":280,"type":"file","file":"Blog/关于本站/关于本站.md"}
+	],
+	"edges":[
+		{"id":"27970333fe3298fb","fromNode":"e13befd0330f7900","fromSide":"top","toNode":"2195d13d40a118e3","toSide":"bottom"},
+		{"id":"4e32dad006c33827","fromNode":"f397bbf7e36f3928","fromSide":"top","toNode":"5aa95c84edaa223a","toSide":"bottom"},
+		{"id":"8c7a0b546223da22","fromNode":"9316b038cf6432eb","fromSide":"top","toNode":"2195d13d40a118e3","toSide":"bottom"},
+		{"id":"55f2a59a79733a18","fromNode":"4d702cec96e7220a","fromSide":"top","toNode":"2195d13d40a118e3","toSide":"bottom"},
+		{"id":"457d18c68d837913","fromNode":"96a25297ea40ddfd","fromSide":"top","toNode":"2195d13d40a118e3","toSide":"bottom"}
+	]
+}
